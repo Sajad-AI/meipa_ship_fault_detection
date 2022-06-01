@@ -1,0 +1,20 @@
+.apexcharts-canvas svg {
+  border-radius: 0.5rem;
+}
+
+.logo-box {
+  width: 40px;
+  height: 40px;
+  background: #000000;
+  font-size: 20px;
+  font-weight: SemiBold;
+  text-align: CENTER;
+  color: #000000;
+  line-height: 28px;
+  letter-spacing: 0.02px;
+  background: #52d858;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
