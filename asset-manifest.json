@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/meipa_ship_fault_detection/static/css/main.2a37ccf9.css",
+    "main.js": "/meipa_ship_fault_detection/static/js/main.04653067.js",
+    "static/media/manrope-all-700-normal.woff": "/meipa_ship_fault_detection/static/media/manrope-all-700-normal.f0d19ba682e88d970aa7.woff",
+    "static/media/manrope-all-600-normal.woff": "/meipa_ship_fault_detection/static/media/manrope-all-600-normal.aba8bc3097a1ec0fb8c1.woff",
+    "static/media/manrope-all-400-normal.woff": "/meipa_ship_fault_detection/static/media/manrope-all-400-normal.71842421721b54059e80.woff",
+    "static/media/manrope-all-800-normal.woff": "/meipa_ship_fault_detection/static/media/manrope-all-800-normal.4bd7f6f40ca15768460b.woff",
+    "static/media/manrope-latin-700-normal.woff2": "/meipa_ship_fault_detection/static/media/manrope-latin-700-normal.2d6ff9179b58f0694066.woff2",
+    "static/media/manrope-latin-400-normal.woff2": "/meipa_ship_fault_detection/static/media/manrope-latin-400-normal.244f03be95db25a45a6b.woff2",
+    "static/media/manrope-latin-600-normal.woff2": "/meipa_ship_fault_detection/static/media/manrope-latin-600-normal.ad612fde65c0d9dee01d.woff2",
+    "static/media/manrope-latin-800-normal.woff2": "/meipa_ship_fault_detection/static/media/manrope-latin-800-normal.f39b992516f745277011.woff2",
+    "static/media/manrope-latin-ext-700-normal.woff2": "/meipa_ship_fault_detection/static/media/manrope-latin-ext-700-normal.53e1d6c965a7efaa1dd1.woff2",
+    "static/media/manrope-latin-ext-400-normal.woff2": "/meipa_ship_fault_detection/static/media/manrope-latin-ext-400-normal.d82682c353d698d384bf.woff2",
+    "static/media/manrope-latin-ext-600-normal.woff2": "/meipa_ship_fault_detection/static/media/manrope-latin-ext-600-normal.b78b389235faf2e05c67.woff2",
+    "static/media/manrope-cyrillic-400-normal.woff2": "/meipa_ship_fault_detection/static/media/manrope-cyrillic-400-normal.e23276b32331e9615bcb.woff2",
+    "static/media/manrope-cyrillic-600-normal.woff2": "/meipa_ship_fault_detection/static/media/manrope-cyrillic-600-normal.ab186fb5dc130eb4776b.woff2",
+    "static/media/manrope-latin-ext-800-normal.woff2": "/meipa_ship_fault_detection/static/media/manrope-latin-ext-800-normal.54d025670af88d21f1e0.woff2",
+    "static/media/manrope-cyrillic-700-normal.woff2": "/meipa_ship_fault_detection/static/media/manrope-cyrillic-700-normal.b8884c2880c1b02b5732.woff2",
+    "static/media/manrope-cyrillic-800-normal.woff2": "/meipa_ship_fault_detection/static/media/manrope-cyrillic-800-normal.d3734de6ca28a7f3a4c2.woff2",
+    "static/media/manrope-greek-600-normal.woff2": "/meipa_ship_fault_detection/static/media/manrope-greek-600-normal.37353aef4b72eb1c8ac0.woff2",
+    "static/media/manrope-greek-400-normal.woff2": "/meipa_ship_fault_detection/static/media/manrope-greek-400-normal.89bd5a5bbaa18a6c49e9.woff2",
+    "static/media/manrope-greek-700-normal.woff2": "/meipa_ship_fault_detection/static/media/manrope-greek-700-normal.e60f1e31d3df1fc1524d.woff2",
+    "static/media/manrope-greek-800-normal.woff2": "/meipa_ship_fault_detection/static/media/manrope-greek-800-normal.b208277d11cd68f7cb95.woff2",
+    "static/media/manrope-vietnamese-700-normal.woff2": "/meipa_ship_fault_detection/static/media/manrope-vietnamese-700-normal.4c007fda11086cfdc2f4.woff2",
+    "static/media/manrope-vietnamese-600-normal.woff2": "/meipa_ship_fault_detection/static/media/manrope-vietnamese-600-normal.7f6f628220125bf02da7.woff2",
+    "static/media/manrope-vietnamese-400-normal.woff2": "/meipa_ship_fault_detection/static/media/manrope-vietnamese-400-normal.384504356acf9c84bb3a.woff2",
+    "static/media/manrope-vietnamese-800-normal.woff2": "/meipa_ship_fault_detection/static/media/manrope-vietnamese-800-normal.91bb870707283d5d486f.woff2",
+    "static/media/manrope-cyrillic-ext-600-normal.woff2": "/meipa_ship_fault_detection/static/media/manrope-cyrillic-ext-600-normal.b2f85d8776dd6ed0ced8.woff2",
+    "static/media/manrope-cyrillic-ext-800-normal.woff2": "/meipa_ship_fault_detection/static/media/manrope-cyrillic-ext-800-normal.b6079fd6d392461d93ac.woff2",
+    "static/media/manrope-cyrillic-ext-700-normal.woff2": "/meipa_ship_fault_detection/static/media/manrope-cyrillic-ext-700-normal.8db1f343f83a2f5cf60b.woff2",
+    "static/media/manrope-cyrillic-ext-400-normal.woff2": "/meipa_ship_fault_detection/static/media/manrope-cyrillic-ext-400-normal.6a44864f4f5fff4be4ae.woff2",
+    "index.html": "/meipa_ship_fault_detection/index.html",
+    "main.2a37ccf9.css.map": "/meipa_ship_fault_detection/static/css/main.2a37ccf9.css.map",
+    "main.04653067.js.map": "/meipa_ship_fault_detection/static/js/main.04653067.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2a37ccf9.css",
+    "static/js/main.04653067.js"
+  ]
+}
