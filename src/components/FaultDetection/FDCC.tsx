@@ -11,25 +11,40 @@ function FDCC(): JSX.Element {
       </Typography>
       <Grid container spacing={2}>
         <Grid item xs={4} sm={12 / 7}>
-          <TextField fullWidth label="Load vs RPM" value="0.5" />
+          <TextField fullWidth label="Load vs RPM" value="0.5" inputProps={{ readOnly: true }} />
         </Grid>
         <Grid item xs={4} sm={12 / 7}>
-          <TextField fullWidth label="Load vs Scav. Air Pressure" value="0.4" />
+          <TextField
+            fullWidth
+            label="Load vs Scav. Air Pressure"
+            value="0.4"
+            inputProps={{ readOnly: true }}
+          />
         </Grid>
         <Grid item xs={4} sm={12 / 7}>
-          <TextField fullWidth label="Cylinder" value="0.5" />
+          <TextField fullWidth label="Cylinder" value="0.5" inputProps={{ readOnly: true }} />
         </Grid>
         <Grid item xs={4} sm={12 / 7}>
-          <TextField fullWidth label="TC1 Tin Speed" value="0.4" />
+          <TextField fullWidth label="TC1 Tin Speed" value="0.4" inputProps={{ readOnly: true }} />
         </Grid>
         <Grid item xs={4} sm={12 / 7}>
-          <TextField fullWidth label="TC2 Tin Speed" value="0.0" />
+          <TextField fullWidth label="TC2 Tin Speed" value="0.0" inputProps={{ readOnly: true }} />
         </Grid>
         <Grid item xs={4} sm={12 / 7}>
-          <TextField fullWidth label="TC1 Speed ScavAP" value="0.0" />
+          <TextField
+            fullWidth
+            label="TC1 Speed ScavAP"
+            value="0.0"
+            inputProps={{ readOnly: true }}
+          />
         </Grid>
         <Grid item xs={4} sm={12 / 7}>
-          <TextField fullWidth label="TC2 Speed ScavAP" value="0.0" />
+          <TextField
+            fullWidth
+            label="TC2 Speed ScavAP"
+            value="0.0"
+            inputProps={{ readOnly: true }}
+          />
         </Grid>
       </Grid>
     </Box>

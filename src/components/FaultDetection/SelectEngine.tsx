@@ -8,6 +8,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
+import OutlinedInput from '@mui/material/OutlinedInput';
 import PlayArrow from '@mui/icons-material/PlayArrow';
 
 function SelectEngine(): JSX.Element {
@@ -27,7 +28,7 @@ function SelectEngine(): JSX.Element {
               labelId="item-select-label"
               id="item-select"
               value={item}
-              label="Item 2"
+              label="Item"
               onChange={(event) => setItem(event.target.value)}
             >
               <MenuItem value={'_Load'}>_Load</MenuItem>
@@ -45,6 +46,7 @@ function SelectEngine(): JSX.Element {
               value={item2}
               label="Item 2"
               onChange={(event) => setItem2(event.target.value)}
+              inputProps={{ readOnly: true }}
             >
               <MenuItem value={'Cyl1'}>Cyl1</MenuItem>
               <MenuItem value={'RPM2'}>RPM 2</MenuItem>
@@ -53,13 +55,28 @@ function SelectEngine(): JSX.Element {
           </FormControl>
         </Grid>
         <Grid item xs={6} sm={2}>
-          <TextField fullWidth label="Correlation Coefficient" value="-0.15569" />
+          <TextField
+            fullWidth
+            label="Correlation Coefficient"
+            value="-0.15569"
+            inputProps={{ readOnly: true }}
+          />
         </Grid>
         <Grid item xs={6} sm={2}>
-          <TextField fullWidth label="CC Average" value="0.134544" />
+          <TextField
+            fullWidth
+            label="CC Average"
+            value="0.134544"
+            inputProps={{ readOnly: true }}
+          />
         </Grid>
         <Grid item xs={6} sm={2}>
-          <TextField fullWidth label="CC Standard Deviation" value="0.134544" />
+          <TextField
+            fullWidth
+            label="CC Standard Deviation"
+            value="0.134544"
+            inputProps={{ readOnly: true }}
+          />
         </Grid>
         <Grid item xs={6} sm={2} sx={{ display: 'flex' }}>
           <Button fullWidth variant="contained" endIcon={<PlayArrow />}>

@@ -7,6 +7,7 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import TableCell from '@mui/material/TableCell';
 import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
 import LineChart from '../Common/LineChart';
 
 const row = [
@@ -23,20 +24,22 @@ function LeftChart(): JSX.Element {
         <LineChart title="M/E Item vs Time (sec)" subtitle="Real Graph: Main Engine Item vs Time" />
       </Box>
       <Box>
-        <FormControl sx={{ minWidth: '10rem' }}>
-          <InputLabel id="item-select-label">Item</InputLabel>
-          <Select
-            labelId="item-select-label"
-            id="item-select"
-            value={item}
-            label="Item"
-            onChange={(event) => setItem(event.target.value)}
-          >
-            <MenuItem value={'RPM'}>RPM</MenuItem>
-            <MenuItem value={'RPM2'}>RPM 2</MenuItem>
-            <MenuItem value={'RPM3'}>RPM 3</MenuItem>
-          </Select>
-        </FormControl>
+        <Grid item xs={6}>
+          <FormControl fullWidth>
+            <InputLabel id="item-select-label">Item</InputLabel>
+            <Select
+              labelId="item-select-label"
+              id="item-select"
+              value={item}
+              label="Item"
+              onChange={(event) => setItem(event.target.value)}
+            >
+              <MenuItem value={'RPM'}>RPM</MenuItem>
+              <MenuItem value={'RPM2'}>RPM 2</MenuItem>
+              <MenuItem value={'RPM3'}>RPM 3</MenuItem>
+            </Select>
+          </FormControl>
+        </Grid>
       </Box>
       <Box>
         {row.map(([key, value], index) => {

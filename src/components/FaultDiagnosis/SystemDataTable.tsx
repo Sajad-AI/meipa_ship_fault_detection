@@ -29,7 +29,7 @@ const rows = [
 function SystemDataTable(): JSX.Element {
   return (
     <TableContainer>
-      <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
+      <Table sx={{ minWidth: 650 }}>
         <TableHead>
           <TableRow>
             <TableCell></TableCell>

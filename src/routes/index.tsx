@@ -13,25 +13,25 @@ type routesType = {
 const routes: routesType = [
   {
     path: '/main-engine',
-    title: 'Jacket Cooling.Water (J.C.W.) System',
+    title: 'Heat Exchanger > Jacket Cooling.Water (J.C.W.)',
     subtitle: 'Monitor J.C.W System',
     element: <MainEngine />
   },
   {
     path: '/real-time-monitoring',
-    title: 'Real Time Monitoring',
+    title: 'Main Engine > Real Time Monitoring',
     subtitle: 'Fault detection metrics in real time',
     element: <RealTimeMonitoring />
   },
   {
     path: '/fault-detection',
-    title: 'Main Engine Fault Detection',
+    title: 'Main Engine > Fault Detection',
     subtitle: 'Detect faults in the ship',
     element: <FaultDetection />
   },
   {
     path: '/fault-diagnosis',
-    title: 'Fault Diagnosis',
+    title: 'Main Engine > Fault Diagnosis',
     subtitle: 'Diagnose faults in the system',
     element: <FaultDiagnosis />
   }

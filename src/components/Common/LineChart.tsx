@@ -9,6 +9,7 @@ type Props = {
 
 function LineChart({ title, subtitle }: Props): JSX.Element {
   const options = {
+    colors: [theme.palette.primary.main],
     chart: {
       type: 'line' as 'line',
       zoom: {
@@ -49,6 +50,16 @@ function LineChart({ title, subtitle }: Props): JSX.Element {
     },
     xaxis: {
       categories: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+    },
+    legend: {
+      show: true,
+      showForSingleSeries: true,
+      position: 'right' as 'right',
+      floating: true,
+      markers: {
+        offsetX: -5,
+        offsetY: 2
+      }
     }
   };
 

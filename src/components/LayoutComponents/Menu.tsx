@@ -1,6 +1,5 @@
 import { useState, Fragment } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import ListSubheader from '@mui/material/ListSubheader';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -9,11 +8,10 @@ import Collapse from '@mui/material/Collapse';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import SendIcon from '@mui/icons-material/Send';
-import ExpandLess from '@mui/icons-material/ExpandLess';
-import ExpandMore from '@mui/icons-material/ExpandMore';
-import ChevronLeft from '@mui/icons-material/ChevronLeft';
+
+import walletIcon from '../../assets/icons/wallet.svg';
+import userListIcon from '../../assets/icons/user-list.svg';
+import thermometerIcon from '../../assets/icons/thermometer-half.svg';
 
 function Menu(): JSX.Element {
   const location = useLocation();
@@ -22,7 +20,7 @@ function Menu(): JSX.Element {
     {
       title: 'Main Engine',
       isOpen: true,
-      icon: <SendIcon />,
+      icon: <img src={walletIcon} />,
       to: '/main-engine',
       children: [
         {
@@ -41,12 +39,12 @@ function Menu(): JSX.Element {
     },
     {
       title: 'Gen Engine',
-      icon: <SendIcon />,
+      icon: <img src={userListIcon} />,
       to: '/test'
     },
     {
       title: 'Heat Exchanger',
-      icon: <SendIcon />,
+      icon: <img src={thermometerIcon} />,
       isOpen: false,
       to: '/test',
       children: [
@@ -63,11 +61,6 @@ function Menu(): JSX.Element {
           to: '/fault-diagnosis'
         }
       ]
-    },
-    {
-      title: 'Reports',
-      to: 'test',
-      icon: <SendIcon />
     }
   ]);
 
@@ -81,18 +74,7 @@ function Menu(): JSX.Element {
     <>
       <Toolbar />
       <Box sx={{ overflow: 'auto' }}>
-        <List
-          sx={{ width: '100%', maxWidth: 230, bgcolor: 'background.paper' }}
-          component="nav"
-          subheader={
-            <ListSubheader component="div" id="nested-list-subheader">
-              <Button>
-                <ChevronLeft />
-                Collapse panel
-              </Button>
-            </ListSubheader>
-          }
-        >
+        <List sx={{ width: '100%', maxWidth: 230, bgcolor: 'background.paper' }} component="nav">
           {menuList.map((menuItem, index) => {
             return (
               <Fragment key={index}>
@@ -103,7 +85,6 @@ function Menu(): JSX.Element {
                 >
                   <ListItemIcon sx={{ minWidth: '3rem' }}>{menuItem.icon}</ListItemIcon>
                   <ListItemText primary={menuItem.title} />
-                  {menuItem?.children && (menuItem.isOpen ? <ExpandLess /> : <ExpandMore />)}
                 </ListItemButton>
                 {menuItem?.children && (
                   <Collapse in={menuItem.isOpen} timeout="auto" unmountOnExit>
