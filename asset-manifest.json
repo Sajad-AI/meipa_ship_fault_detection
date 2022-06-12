@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/meipa_ship_fault_detection/static/css/main.2a37ccf9.css",
-    "main.js": "/meipa_ship_fault_detection/static/js/main.04653067.js",
+    "main.css": "/meipa_ship_fault_detection/static/css/main.d81e3ae6.css",
+    "main.js": "/meipa_ship_fault_detection/static/js/main.b1b7e29f.js",
     "static/media/manrope-all-700-normal.woff": "/meipa_ship_fault_detection/static/media/manrope-all-700-normal.f0d19ba682e88d970aa7.woff",
     "static/media/manrope-all-600-normal.woff": "/meipa_ship_fault_detection/static/media/manrope-all-600-normal.aba8bc3097a1ec0fb8c1.woff",
     "static/media/manrope-all-400-normal.woff": "/meipa_ship_fault_detection/static/media/manrope-all-400-normal.71842421721b54059e80.woff",
@@ -26,16 +26,22 @@
     "static/media/manrope-vietnamese-600-normal.woff2": "/meipa_ship_fault_detection/static/media/manrope-vietnamese-600-normal.7f6f628220125bf02da7.woff2",
     "static/media/manrope-vietnamese-400-normal.woff2": "/meipa_ship_fault_detection/static/media/manrope-vietnamese-400-normal.384504356acf9c84bb3a.woff2",
     "static/media/manrope-vietnamese-800-normal.woff2": "/meipa_ship_fault_detection/static/media/manrope-vietnamese-800-normal.91bb870707283d5d486f.woff2",
+    "static/media/broadcast-pin.svg": "/meipa_ship_fault_detection/static/media/broadcast-pin.fef8ce3337f26f232c6362dc04000d93.svg",
     "static/media/manrope-cyrillic-ext-600-normal.woff2": "/meipa_ship_fault_detection/static/media/manrope-cyrillic-ext-600-normal.b2f85d8776dd6ed0ced8.woff2",
     "static/media/manrope-cyrillic-ext-800-normal.woff2": "/meipa_ship_fault_detection/static/media/manrope-cyrillic-ext-800-normal.b6079fd6d392461d93ac.woff2",
     "static/media/manrope-cyrillic-ext-700-normal.woff2": "/meipa_ship_fault_detection/static/media/manrope-cyrillic-ext-700-normal.8db1f343f83a2f5cf60b.woff2",
     "static/media/manrope-cyrillic-ext-400-normal.woff2": "/meipa_ship_fault_detection/static/media/manrope-cyrillic-ext-400-normal.6a44864f4f5fff4be4ae.woff2",
+    "static/media/thermometer-half.svg": "/meipa_ship_fault_detection/static/media/thermometer-half.e9974a2c2dff98eb958a355514e01458.svg",
+    "static/media/wallet.svg": "/meipa_ship_fault_detection/static/media/wallet.ec44bb84cde98f1af06f4d61fc6ef404.svg",
+    "static/media/ericsson.svg": "/meipa_ship_fault_detection/static/media/ericsson.6f00a1c7318e41b9921a86f40c638811.svg",
     "index.html": "/meipa_ship_fault_detection/index.html",
-    "main.2a37ccf9.css.map": "/meipa_ship_fault_detection/static/css/main.2a37ccf9.css.map",
-    "main.04653067.js.map": "/meipa_ship_fault_detection/static/js/main.04653067.js.map"
+    "static/media/user-list.svg": "/meipa_ship_fault_detection/static/media/user-list.f75342dc4d27d234a517e6001640b6b8.svg",
+    "static/media/bar-chart.svg": "/meipa_ship_fault_detection/static/media/bar-chart.d372ae91bdc138c4b6dc6e8d9465d00c.svg",
+    "main.d81e3ae6.css.map": "/meipa_ship_fault_detection/static/css/main.d81e3ae6.css.map",
+    "main.b1b7e29f.js.map": "/meipa_ship_fault_detection/static/js/main.b1b7e29f.js.map"
   },
   "entrypoints": [
-    "static/css/main.2a37ccf9.css",
-    "static/js/main.04653067.js"
+    "static/css/main.d81e3ae6.css",
+    "static/js/main.b1b7e29f.js"
   ]
 }
