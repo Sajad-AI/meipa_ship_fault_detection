@@ -3,9 +3,9 @@ import Typography from '@mui/material/Typography';
 import Toolbar from '@mui/material/Toolbar';
 
 type Props = {
-  title: string;
-  subtitle: string;
-  element: JSX.Element;
+  title?: string;
+  subtitle?: string;
+  element?: JSX.Element;
 };
 
 function Main({ title, subtitle, element }: Props): JSX.Element {

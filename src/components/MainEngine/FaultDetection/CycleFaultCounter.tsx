@@ -9,16 +9,44 @@ import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import TableCell from '@mui/material/TableCell';
 import TableView from '@mui/icons-material/TableView';
 import CloseIcon from '@mui/icons-material/Close';
 
-import CorelationCoefficientTable from './CorelationCoefficientTable';
+import Table, { TableRows, TableHeader } from '../../common/Table';
+import KeyValueTable, { KeyValueTableRows } from '../../common/KeyValueTable';
 
-const row = [
-  ['FDCC Load-RPM', 26],
-  ['FDCC Load-ScavAP', 26],
-  ['FDCC Bwt Cyl Texh', 149.5]
+const row: KeyValueTableRows = [
+  [
+    ['FDCC Load-RPM', 26],
+    ['FDCC Load-ScavAP', 26],
+    ['FDCC Bwt Cyl Texh', 149.5]
+  ]
+];
+
+const tableHeader: TableHeader = [
+  'Load',
+  'RPM',
+  'Cyl 1 Texh',
+  'Cyl 2 Texh',
+  'Cyl 3 Texh',
+  'Cyl 4 Texh',
+  'Cyl 5 Texh',
+  'Cyl 6 Texh',
+  'TC1 Tin',
+  'TC1 Texh',
+  'TC1 Speed'
+];
+const tableRows: TableRows = [
+  ['RPM', 159, '', '', '', '', '', '', '', '', '', ''],
+  ['Cyl 1 Texh', 237, 9.0, '', '', '', '', '', '', '', '', ''],
+  ['Cyl 2 Texh', 262, 16.0, 24, '', '', '', '', '', '', '', ''],
+  ['Cyl 3 Texh', 305, 3.7, 67, 4.3, 10, '', '', '', '', '', ''],
+  ['Cyl 4 Texh', 305, 3.7, 67, 4.3, 10, 12, '', '', '', '', ''],
+  ['Cyl 5 Texh', 305, 3.7, 67, 4.3, 10, 20, 23, '', '', '', ''],
+  ['Cyl 6 Texh', 305, 3.7, 67, 4.3, 10, 20, 45, 55, '', '', ''],
+  ['TC1 Tin', 305, 3.7, 67, 4.3, 10, 20, 30, 12, 22, '', ''],
+  ['TC1 Texh', 305, 3.7, 67, 4.3, 10, 20, 30, 40, 12, 78, ''],
+  ['TC1 Speed', 305, 3.7, 67, 4.3, 10, 20, 30, 40, 50, 13, 89]
 ];
 
 function CycleFaultCounter(): JSX.Element {
@@ -67,23 +95,11 @@ function CycleFaultCounter(): JSX.Element {
             <Divider />
             <DialogContent>
               <Box sx={{ display: 'flex', justifyContent: 'center', mb: 2 }}>
-                {row.map(([key, value], index) => {
-                  return (
-                    <TableCell
-                      key={index}
-                      component="div"
-                      align="center"
-                      sx={{ p: 1, pr: index !== row.length - 1 ? 3 : 0 }}
-                    >
-                      <Box sx={{ display: 'flex', justifyContent: 'space-around' }}>
-                        <Typography fontWeight="600">{key}</Typography>
-                        <Typography sx={{ ml: 2 }}>{value}</Typography>
-                      </Box>
-                    </TableCell>
-                  );
-                })}
+                <Grid item xs={12} sm={6}>
+                  <KeyValueTable rows={row} />
+                </Grid>
               </Box>
-              <CorelationCoefficientTable />
+              <Table rows={tableRows} header={tableHeader} />
             </DialogContent>
           </Dialog>
         </Grid>

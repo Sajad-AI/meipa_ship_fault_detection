@@ -26,7 +26,13 @@ function DefaultLayout(): JSX.Element {
       />
       <Routes>
         {routes.map((route, index) => {
-          return <Route key={index} path={route.path} element={<Main {...route} />} />;
+          return (
+            <Route key={index} path={route.path}>
+              {route.children?.map((childRoute, index2) => (
+                <Route key={index2} path={childRoute.path} element={<Main {...childRoute} />} />
+              ))}
+            </Route>
+          );
         })}
       </Routes>
     </Box>

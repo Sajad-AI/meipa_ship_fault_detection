@@ -6,7 +6,7 @@ import LeftChart from './LeftChart';
 import MiddleChart from './MiddleChart';
 import RightChart from './RightChart';
 
-function MainEngineCharts(): JSX.Element {
+function Charts(): JSX.Element {
   return (
     <Box>
       <Typography variant="subtitle1" sx={{ mb: 2 }}>
@@ -27,4 +27,4 @@ function MainEngineCharts(): JSX.Element {
   );
 }
 
-export default MainEngineCharts;
+export default Charts;

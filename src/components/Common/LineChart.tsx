@@ -1,15 +1,23 @@
 import Chart from 'react-apexcharts';
+import { ApexOptions } from 'apexcharts';
 
 import theme from '../../config/theme';
+
+type ApexSeries = {
+  name: string;
+  data: number[];
+}[];
 
 type Props = {
   title: string;
   subtitle: string;
+  series: ApexSeries;
+  hideXAxis?: boolean;
 };
 
-function LineChart({ title, subtitle }: Props): JSX.Element {
-  const options = {
-    colors: [theme.palette.primary.main],
+function LineChart({ title, subtitle, series, hideXAxis }: Props): JSX.Element {
+  const options: ApexOptions = {
+    colors: [theme.palette.primary.main, theme.palette.error.main, theme.palette.warning.main],
     chart: {
       type: 'line' as 'line',
       zoom: {
@@ -18,6 +26,10 @@ function LineChart({ title, subtitle }: Props): JSX.Element {
       background: '#E5E5E580',
       toolbar: {
         show: false
+      },
+      dropShadow: {
+        enabled: true
+        // color: '#0F56B3',
       }
     },
     dataLabels: {
@@ -25,7 +37,7 @@ function LineChart({ title, subtitle }: Props): JSX.Element {
     },
     stroke: {
       curve: 'straight' as 'straight',
-      colors: [theme.palette.primary.main],
+      colors: [theme.palette.primary.main, theme.palette.error.main, theme.palette.warning.main],
       width: 2
     },
     title: {
@@ -49,13 +61,32 @@ function LineChart({ title, subtitle }: Props): JSX.Element {
       }
     },
     xaxis: {
+      labels: {
+        show: !hideXAxis
+      },
+      axisBorder: {
+        show: !hideXAxis
+      },
+      axisTicks: {
+        show: !hideXAxis
+      },
       categories: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
     },
+    yaxis: [
+      {
+        seriesName: 'Series 1'
+      },
+      {
+        opposite: true,
+        seriesName: 'Series 2'
+      }
+    ],
     legend: {
       show: true,
       showForSingleSeries: true,
       position: 'right' as 'right',
       floating: true,
+      offsetY: -10,
       markers: {
         offsetX: -5,
         offsetY: 2
@@ -63,14 +94,13 @@ function LineChart({ title, subtitle }: Props): JSX.Element {
     }
   };
 
-  const series = [
-    {
-      name: 'Desktops',
-      data: [10, 41, 35, 51, 49, 62, 69, 91, 148]
-    }
-  ];
-
   return <Chart options={options} series={series} type="line" width="100%" height="350px" />;
 }
+
+LineChart.defaultProps = {
+  hideXAxis: false
+};
+
+export type { ApexSeries };
 
 export default LineChart;

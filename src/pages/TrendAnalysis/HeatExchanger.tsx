@@ -1,23 +1,14 @@
 import { useLayoutEffect, useState } from 'react';
-import theme from '../../config/theme';
 import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
+import Grid from '@mui/material/Grid';
 import PlayArrow from '@mui/icons-material/PlayArrow';
-import useMediaQuery from '@mui/material/useMediaQuery';
+
+import DateRangePicker from '../../components/common/DateRangePicker';
 
 import LineChart, { ApexSeries } from '../../components/common/LineChart';
 import Select from '../../components/common/Form/Select';
-import KeyValueTable, { KeyValueTableRows } from '../../components/common/KeyValueTable';
-
-const row: KeyValueTableRows = [
-  [
-    ['MA', 159],
-    ['MVSD', 120],
-    ['CC', 12]
-  ]
-];
 
 const chartSeries: ApexSeries = [
   {
@@ -27,17 +18,12 @@ const chartSeries: ApexSeries = [
   {
     name: 'Series 2',
     data: [100, 12, 4, 45, 23, 90, 20, 34, 3]
-  },
-  {
-    name: 'Series 3',
-    data: [1, 50, 60, 70, 80, 85, 90, 95, 100]
   }
 ];
 
-function RealTimeMonitoring(): JSX.Element {
-  const xs = useMediaQuery(theme.breakpoints.down('sm'));
-
-  const [item, setItem] = useState('RPM');
+function HeatExchanger(): JSX.Element {
+  const [item, setItem] = useState('CLR Input Temp');
+  const [item2, setItem2] = useState('CLR Output Temp');
   const [key, setKey] = useState(0);
 
   useLayoutEffect(() => {
@@ -47,19 +33,26 @@ function RealTimeMonitoring(): JSX.Element {
   return (
     <Stack spacing={5}>
       <Box sx={{ display: { sm: 'flex' } }}>
-        <Stack direction={xs ? 'column' : 'row'} spacing={2}>
-          <Box>
-            <Select label="Item" value={item} setValue={setItem} sx={{ minWidth: '15rem' }} />
-          </Box>
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <Grid item xs={12} sm={6}>
-              <KeyValueTable rows={row} />
+        <Grid container spacing={2}>
+          <Grid container item xs={12} sm={5} spacing={2}>
+            <Grid xs={6} item>
+              <Select label="Item 1" value={item} setValue={setItem} fullWidth />
             </Grid>
-          </Box>
-          <Button variant="contained" endIcon={<PlayArrow />}>
-            Run
-          </Button>
-        </Stack>
+            <Grid xs={6} item>
+              <Select label="Item 2" value={item2} setValue={setItem2} fullWidth />
+            </Grid>
+          </Grid>
+          <Grid container item xs={12} sm={7} spacing={2}>
+            <Grid item xs={12} sm={8}>
+              <DateRangePicker />
+            </Grid>
+            <Grid item xs={12} sm={4} sx={{ display: 'flex' }}>
+              <Button variant="contained" endIcon={<PlayArrow />}>
+                Run
+              </Button>
+            </Grid>
+          </Grid>
+        </Grid>
       </Box>
       <Stack spacing={1}>
         <LineChart
@@ -78,4 +71,4 @@ function RealTimeMonitoring(): JSX.Element {
   );
 }
 
-export default RealTimeMonitoring;
+export default HeatExchanger;

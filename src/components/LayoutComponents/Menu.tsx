@@ -1,4 +1,4 @@
-import { useState, Fragment } from 'react';
+import { Fragment } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
@@ -9,98 +9,39 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
-import walletIcon from '../../assets/icons/wallet.svg';
-import userListIcon from '../../assets/icons/user-list.svg';
-import thermometerIcon from '../../assets/icons/thermometer-half.svg';
+import routes from '../../routes';
 
 function Menu(): JSX.Element {
   const location = useLocation();
-
-  const [menuList, setMenuList] = useState([
-    {
-      title: 'Main Engine',
-      isOpen: true,
-      icon: <img src={walletIcon} />,
-      to: '/main-engine',
-      children: [
-        {
-          title: 'Real Time Monitoring',
-          to: '/real-time-monitoring'
-        },
-        {
-          title: 'M/E Fault Detect',
-          to: '/fault-detection'
-        },
-        {
-          title: 'Fault Diagnosis',
-          to: '/fault-diagnosis'
-        }
-      ]
-    },
-    {
-      title: 'Gen Engine',
-      icon: <img src={userListIcon} />,
-      to: '/test'
-    },
-    {
-      title: 'Heat Exchanger',
-      icon: <img src={thermometerIcon} />,
-      isOpen: false,
-      to: '/test',
-      children: [
-        {
-          title: 'Real Time Monitoring',
-          to: '/real-time-monitoring'
-        },
-        {
-          title: 'M/E Fault Detect',
-          to: '/fault-detection'
-        },
-        {
-          title: 'Fault Diagnosis',
-          to: '/fault-diagnosis'
-        }
-      ]
-    }
-  ]);
-
-  // const handleToggleOpen = (index: any) => {
-  //   const copyMenu = [...menuList];
-  //   copyMenu[index].isOpen = !copyMenu[index].isOpen;
-  //   setMenuList(copyMenu);
-  // };
 
   return (
     <>
       <Toolbar />
       <Box sx={{ overflow: 'auto' }}>
-        <List sx={{ width: '100%', maxWidth: 230, bgcolor: 'background.paper' }} component="nav">
-          {menuList.map((menuItem, index) => {
+        <List sx={{ width: '100%', bgcolor: 'background.paper' }} component="nav">
+          {routes.map((route, index) => {
             return (
               <Fragment key={index}>
-                <ListItemButton
-                  component={Link}
-                  to={menuItem.to}
-                  selected={menuItem.to === location.pathname}
-                >
-                  <ListItemIcon sx={{ minWidth: '3rem' }}>{menuItem.icon}</ListItemIcon>
-                  <ListItemText primary={menuItem.title} />
+                <ListItemButton>
+                  <ListItemIcon sx={{ minWidth: '3rem' }}>{route.nav?.icon}</ListItemIcon>
+                  <ListItemText primary={route.nav.title} />
                 </ListItemButton>
-                {menuItem?.children && (
-                  <Collapse in={menuItem.isOpen} timeout="auto" unmountOnExit>
+                {route?.children && (
+                  <Collapse in={true} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding>
-                      {menuItem.children.map((itemChild, childIndex) => {
+                      {route.children.map((childRoute, childIndex) => {
+                        const fullPath = '/' + route.path + '/' + childRoute.path;
                         return (
                           <ListItemButton
                             key={childIndex}
                             sx={{ pl: 8 }}
                             component={Link}
-                            to={itemChild.to}
-                            selected={itemChild.to === location.pathname}
+                            to={fullPath}
+                            selected={fullPath === location.pathname}
                           >
                             <ListItemText
                               primary={
-                                <Typography variant="subtitle2">{itemChild.title}</Typography>
+                                <Typography variant="subtitle2">{childRoute.nav.title}</Typography>
                               }
                             />
                           </ListItemButton>

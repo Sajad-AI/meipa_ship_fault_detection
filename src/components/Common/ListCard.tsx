@@ -7,46 +7,34 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Circle from '@mui/icons-material/Circle';
 
-type diagnosItemType = { title: string };
-type diagnosListType = diagnosItemType[];
+type Item = {
+  title: string;
+};
 
-const diagnosList = [
-  {
-    title: 'Cyl No. 6 Fault: Fuel V run hrs - 0, Fuel V remain hrs = 100'
-  },
-  {
-    title: 'Cyl No. 6 Fault: Fuel V run hrs - 0, Fuel V remain hrs = 100'
-  },
-  {
-    title: 'Cyl No. 6 Fault: Fuel V run hrs - 0, Fuel V remain hrs = 100'
-  },
-  {
-    title: 'Cyl No. 6 Fault: Fuel V run hrs - 0, Fuel V remain hrs = 100'
-  }
-];
+type List = Item[];
 
-function FaultDiagnosisCard({ title }: { title: string }): JSX.Element {
+function ListCard({ title, list }: { title: string; list: List }): JSX.Element {
   return (
     <Card sx={{ backgroundColor: '#E5E5E5' }}>
       <CardHeader subheader={title} />
       <CardContent sx={{ pt: 0 }}>
-        <DiagnosList diagnosList={diagnosList} />
+        <ListComponent list={list} />
       </CardContent>
     </Card>
   );
 }
 
-function DiagnosList({ diagnosList }: { diagnosList: diagnosListType }): JSX.Element {
+function ListComponent({ list }: { list: List }): JSX.Element {
   return (
     <List disablePadding>
-      {diagnosList.map((diagnosItem, index) => (
-        <DiagnosItem key={index} {...diagnosItem} />
+      {list.map((item, index) => (
+        <ItemComponent key={index} {...item} />
       ))}
     </List>
   );
 }
 
-function DiagnosItem({ title }: diagnosItemType): JSX.Element {
+function ItemComponent({ title }: Item): JSX.Element {
   return (
     <ListItem disablePadding>
       <ListItemIcon sx={{ minWidth: '2rem' }}>
@@ -57,4 +45,6 @@ function DiagnosItem({ title }: diagnosItemType): JSX.Element {
   );
 }
 
-export default FaultDiagnosisCard;
+export type { List };
+
+export default ListCard;

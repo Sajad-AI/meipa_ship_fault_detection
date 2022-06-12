@@ -5,82 +5,35 @@ import Box from '@mui/system/Box';
 
 import Circle from '@mui/icons-material/Circle';
 
-type stateType = { title: string; color: 'success' | 'error' };
-type statesType = stateType[];
+type StateItem = {
+  title: string;
+  variant: 'success' | 'error';
+};
 
-const states: statesType = [
-  {
-    title: 'Cyl1',
-    color: 'success'
-  },
-  {
-    title: 'Cyl2',
-    color: 'error'
-  },
-  {
-    title: 'Cyl3',
-    color: 'error'
-  },
-  {
-    title: 'Cyl4',
-    color: 'error'
-  },
-  {
-    title: 'Cyl5',
-    color: 'error'
-  },
-  {
-    title: 'Cyl6',
-    color: 'error'
-  },
-  {
-    title: 'Cyl7',
-    color: 'success'
-  },
-  {
-    title: 'Cyl8',
-    color: 'success'
-  },
-  {
-    title: 'TC1 Tin Spd',
-    color: 'error'
-  },
-  {
-    title: 'TC2 Tin Spd',
-    color: 'success'
-  },
-  {
-    title: 'Ld: ScavAP',
-    color: 'success'
-  },
-  {
-    title: 'Ld:RPM',
-    color: 'success'
-  }
-];
+type StateList = StateItem[];
 
-function FaultState({ title }: { title: string }): JSX.Element {
+function FaultState({ title, stateList }: { title: string; stateList: StateList }): JSX.Element {
   return (
     <Box>
       <Typography variant="subtitle1" sx={{ mb: 2 }}>
         {title}
       </Typography>
-      <StateList states={states} />
+      <StateList states={stateList} />
     </Box>
   );
 }
 
-function StateList({ states }: { states: statesType }): JSX.Element {
+function StateList({ states }: { states: StateList }): JSX.Element {
   return (
     <Stack direction="row" sx={{ flexWrap: 'wrap' }}>
-      {states.map((state: stateType, index: number) => (
+      {states.map((state: StateItem, index: number) => (
         <StateItem key={index} {...state} />
       ))}
     </Stack>
   );
 }
 
-function StateItem({ title, color }: stateType): JSX.Element {
+function StateItem({ title, variant }: StateItem): JSX.Element {
   return (
     <Chip
       sx={{
@@ -95,9 +48,11 @@ function StateItem({ title, color }: stateType): JSX.Element {
       icon={<Circle sx={{ width: '1rem', height: '1rem', ml: 2 }} />}
       label={title}
       variant="outlined"
-      color={color}
+      color={variant}
     />
   );
 }
+
+export type { StateList };
 
 export default FaultState;
